@@ -21,7 +21,12 @@ class CastlerAPI:
             },
             json=body
         )
-        # response.raise_for_status()
+
+        try:
+           response.raise_for_status()
+        except requests.exceptions.HTTPError:
+            frappe.throw(response.text)
+
         return response.json()
 
     def request_b2e_transfer(self, **kwargs):
@@ -81,6 +86,26 @@ class CastlerAPI:
     def fetch_bank_balance(self, account_no):
         url = f"{self.settings.base_url}/api/v1/bank-account/{account_no}/balance" 
         response = self.make_request(url, {}, "GET")
+        if not response.get("success"):
+            frappe.throw(
+                "<br>".join(response.get("errors", []))
+            )
+        return response["result"]
+
+    def create_escrow_account(self, **kwargs):
+        url = f"{self.settings.base_url}/api/v1/account"
+        body = {
+            "email": kwargs.get("email"),
+            "name": kwargs.get("account_name"),
+            "purpose": kwargs.get("purpose"),
+            "startDate": kwargs.get("start_date"),
+            "validity": kwargs.get("validity"),
+            "expectedVolume": kwargs.get("expected_volume"),
+            "hardEscrowAccountNumber": kwargs.get("hard_escrow_number"),
+            "bank": kwargs.get("bank"),
+        }
+        # frappe.throw(str(body))
+        response = self.make_request(url, body)
         if not response.get("success"):
             frappe.throw(
                 "<br>".join(response.get("errors", []))

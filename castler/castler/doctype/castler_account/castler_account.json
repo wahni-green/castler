@@ -1,0 +1,117 @@
+{
+ "actions": [],
+ "autoname": "field:account_id",
+ "creation": "2024-10-31 09:05:18.738275",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "account_id",
+  "account_name",
+  "start_date",
+  "validity",
+  "hard_escrow_number",
+  "expected_volume",
+  "column_break_qpdl",
+  "email",
+  "bank",
+  "purpose"
+ ],
+ "fields": [
+  {
+   "fieldname": "account_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Account Name",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "column_break_qpdl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Purpose",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Datetime",
+   "label": "Start Date",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "validity",
+   "fieldtype": "Int",
+   "label": "Validity (Days)",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "expected_volume",
+   "fieldtype": "Currency",
+   "label": "Expected Volume",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "hard_escrow_number",
+   "fieldtype": "Data",
+   "label": "Hard Escrow Number"
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Select",
+   "label": "Bank",
+   "options": "\nICICI\nRBL\nYes Bank\nIDFC\nHDFC\nIBL\nDBS",
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "account_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Account ID",
+   "read_only": 1,
+   "set_only_once": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1,
+   "set_only_once": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-31 09:20:46.650272",
+ "modified_by": "Administrator",
+ "module": "Castler",
+ "name": "Castler Account",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "account_name"
+}
