@@ -111,3 +111,21 @@ class CastlerAPI:
                 "<br>".join(response.get("errors", []))
             )
         return response["result"]
+
+    def create_payee(self, **kwargs):
+        url = f"{self.settings.base_url}/api/v1/payee"
+        body = {
+            "accountHolder": kwargs.get("account_holder"),
+            "email": kwargs.get("email"),
+            "mobile": kwargs.get("mobile"),
+            "bankName": kwargs.get("bank"),
+            "bankAddress": kwargs.get("bank_address"),
+            "accountNumber": kwargs.get("account_number"),
+            "ifsc": kwargs.get("ifsc"),
+        }
+        response = self.make_request(url, body)
+        if not response.get("success"):
+            frappe.throw(
+                "<br>".join(response.get("errors", []))
+            )
+        return response["result"]

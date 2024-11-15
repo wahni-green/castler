@@ -1,0 +1,106 @@
+{
+ "actions": [],
+ "autoname": "field:payee_id",
+ "creation": "2024-11-15 16:13:14.841589",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "payee_id",
+  "account_holder",
+  "bank",
+  "bank_address",
+  "column_break_bvng",
+  "account_number",
+  "ifsc",
+  "email",
+  "mobile"
+ ],
+ "fields": [
+  {
+   "fieldname": "account_holder",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Account Holder",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Bank",
+   "options": "Bank",
+   "reqd": 1
+  },
+  {
+   "fieldname": "bank_address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Bank Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_bvng",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "account_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Account Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ifsc",
+   "fieldtype": "Data",
+   "label": "IFSC",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payee_id",
+   "fieldtype": "Data",
+   "label": "Payee ID",
+   "no_copy": 1,
+   "read_only": 1,
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-11-15 16:26:21.880658",
+ "modified_by": "Administrator",
+ "module": "Castler",
+ "name": "Castler Payee",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "account_holder"
+}

@@ -54,7 +54,7 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "To Account",
-   "options": "Castler Account",
+   "options": "Castler Payee",
    "reqd": 1
   },
   {
@@ -99,7 +99,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-31 09:57:26.697395",
+ "modified": "2024-11-15 16:27:23.446920",
  "modified_by": "Administrator",
  "module": "Castler",
  "name": "Castler Transfer",
