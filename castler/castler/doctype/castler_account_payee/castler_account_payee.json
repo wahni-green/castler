@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-11-25 08:33:59.107808",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "payee",
+  "column_break_vokx",
+  "share_type",
+  "column_break_qkzu",
+  "share"
+ ],
+ "fields": [
+  {
+   "fieldname": "payee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Payee",
+   "options": "Castler Payee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_vokx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "share_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Share Type",
+   "options": "INR\n%",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_qkzu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "share",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Share",
+   "non_negative": 1,
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-11-25 08:35:53.967954",
+ "modified_by": "Administrator",
+ "module": "Castler",
+ "name": "Castler Account Payee",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

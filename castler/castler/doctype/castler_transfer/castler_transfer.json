@@ -11,10 +11,11 @@
   "status",
   "amended_from",
   "section_break_drlt",
-  "from_account",
-  "amount",
+  "from_type",
   "transfer_type",
+  "amount",
   "column_break_ecjl",
+  "from_account",
   "to_account",
   "purpose"
  ],
@@ -39,10 +40,10 @@
   },
   {
    "fieldname": "from_account",
-   "fieldtype": "Link",
+   "fieldtype": "Dynamic Link",
    "in_list_view": 1,
    "label": "From Account",
-   "options": "Castler Account",
+   "options": "from_type",
    "reqd": 1
   },
   {
@@ -53,7 +54,7 @@
    "fieldname": "to_account",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "To Account",
+   "label": "Payee",
    "options": "Castler Payee",
    "reqd": 1
   },
@@ -78,6 +79,7 @@
    "reqd": 1
   },
   {
+   "default": "Now",
    "fieldname": "request_date",
    "fieldtype": "Datetime",
    "label": "Request Date"
@@ -94,12 +96,18 @@
    "fieldtype": "Data",
    "label": "Transfer ID",
    "read_only": 1
+  },
+  {
+   "fieldname": "from_type",
+   "fieldtype": "Select",
+   "label": "From Type",
+   "options": "Castler Account\nBank Account"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-15 16:27:23.446920",
+ "modified": "2024-11-25 08:57:13.890771",
  "modified_by": "Administrator",
  "module": "Castler",
  "name": "Castler Transfer",

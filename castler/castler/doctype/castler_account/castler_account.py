@@ -28,4 +28,11 @@ class CastlerAccount(Document):
 
 		self.account_id = escrow_details["accountId"]
 		self.name = self.account_id
-		msgprint(str(escrow_details))
+		for payee in self.payees:
+			payee_details = {
+				"escrow": self.account_id,
+				"payee": payee.payee,
+				"share_unit": payee.share_type,
+				"share": payee.share,
+			}
+			castler_api.link_payee_to_escrow(**payee_details)

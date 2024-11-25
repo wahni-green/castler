@@ -29,7 +29,7 @@ class CastlerAPI:
 
         return response.json()
 
-    def request_b2e_transfer(self, **kwargs):
+    def request_b2p_transfer(self, **kwargs):
         # Bank to Escrow Transfer
         url = f"{self.settings.base_url}/api/v1/bank-account/transfer"
         body = {
@@ -47,7 +47,7 @@ class CastlerAPI:
             )
         return response["result"]
 
-    def fetch_b2e_transfer_status(self, transfer_id):
+    def fetch_b2p_transfer_status(self, transfer_id):
         url = f"{self.settings.base_url}/api/v1/bank-account/transfer/{transfer_id}"
         response = self.make_request(url, {}, "GET")
         if not response.get("success"):
@@ -56,7 +56,7 @@ class CastlerAPI:
             )
         return response["result"]
 
-    def request_e2e_transfer(self, **kwargs):
+    def request_e2p_transfer(self, **kwargs):
         # Escrow to Escrow Transfer
         url = f"{self.settings.base_url}/api/v1/transfer"
         body = {
@@ -74,7 +74,7 @@ class CastlerAPI:
             )
         return response["result"]
 
-    def fetch_e2e_transfer_status(self, transfer_id):
+    def fetch_e2p_transfer_status(self, transfer_id):
         url = f"{self.settings.base_url}/api/v1/transfer/{transfer_id}"
         response = self.make_request(url, {}, "GET")
         if not response.get("success"):
@@ -122,6 +122,22 @@ class CastlerAPI:
             "bankAddress": kwargs.get("bank_address"),
             "accountNumber": kwargs.get("account_number"),
             "ifsc": kwargs.get("ifsc"),
+        }
+        response = self.make_request(url, body)
+        if not response.get("success"):
+            frappe.throw(
+                "<br>".join(response.get("errors", []))
+            )
+        return response["result"]
+
+    def link_payee_to_escrow(self, **kwargs):
+        url = f"{self.settings.base_url}/api/v1/account/{kwargs['escrow']}/link-payee"
+        body = {
+            "shareUnit": kwargs.get("share_unit"),
+            "payee": {
+                "payeeId": kwargs.get("payee"),
+                "share": kwargs.get("share"),
+            }
         }
         response = self.make_request(url, body)
         if not response.get("success"):

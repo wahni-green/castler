@@ -9,12 +9,14 @@
   "account_name",
   "start_date",
   "validity",
-  "hard_escrow_number",
   "expected_volume",
+  "hard_escrow_number",
   "column_break_qpdl",
   "email",
   "bank",
-  "purpose"
+  "purpose",
+  "section_break_lesl",
+  "payees"
  ],
  "fields": [
   {
@@ -55,6 +57,8 @@
    "fieldname": "expected_volume",
    "fieldtype": "Currency",
    "label": "Expected Volume",
+   "non_negative": 1,
+   "reqd": 1,
    "set_only_once": 1
   },
   {
@@ -86,11 +90,23 @@
    "options": "Email",
    "reqd": 1,
    "set_only_once": 1
+  },
+  {
+   "fieldname": "section_break_lesl",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "payees",
+   "fieldtype": "Table",
+   "label": "Payees",
+   "options": "Castler Account Payee",
+   "read_only_depends_on": "eval: !doc.__islocal",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-31 09:20:46.650272",
+ "modified": "2024-11-25 08:44:59.085607",
  "modified_by": "Administrator",
  "module": "Castler",
  "name": "Castler Account",

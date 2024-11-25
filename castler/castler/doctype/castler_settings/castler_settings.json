@@ -12,7 +12,12 @@
   "column_break_wzks",
   "api_key",
   "api_secret",
-  "api_token"
+  "api_token",
+  "section_break_agph",
+  "company_payee",
+  "column_break_gtbe",
+  "default_share_type",
+  "default_share"
  ],
  "fields": [
   {
@@ -54,12 +59,37 @@
    "fieldtype": "Password",
    "hidden": 1,
    "label": "API Token"
+  },
+  {
+   "fieldname": "section_break_agph",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "company_payee",
+   "fieldtype": "Link",
+   "label": "Company Payee",
+   "options": "Castler Payee"
+  },
+  {
+   "fieldname": "column_break_gtbe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_share_type",
+   "fieldtype": "Select",
+   "label": "Default Share Type",
+   "options": "INR\n%"
+  },
+  {
+   "fieldname": "default_share",
+   "fieldtype": "Float",
+   "label": "Default Share"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-10-28 15:17:41.625351",
+ "modified": "2024-11-25 08:47:39.698067",
  "modified_by": "Administrator",
  "module": "Castler",
  "name": "Castler Settings",
