@@ -15,9 +15,12 @@
   "api_token",
   "section_break_agph",
   "company_payee",
+  "default_validity",
+  "default_bank",
   "column_break_gtbe",
   "default_share_type",
-  "default_share"
+  "default_share",
+  "default_volume"
  ],
  "fields": [
   {
@@ -84,12 +87,29 @@
    "fieldname": "default_share",
    "fieldtype": "Float",
    "label": "Default Share"
+  },
+  {
+   "fieldname": "default_validity",
+   "fieldtype": "Int",
+   "label": "Default Validity",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "default_volume",
+   "fieldtype": "Currency",
+   "label": "Default Volume"
+  },
+  {
+   "fieldname": "default_bank",
+   "fieldtype": "Select",
+   "label": "Default Bank",
+   "options": "RBL"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-11-25 08:47:39.698067",
+ "modified": "2024-11-25 09:21:00.920941",
  "modified_by": "Administrator",
  "module": "Castler",
  "name": "Castler Settings",
