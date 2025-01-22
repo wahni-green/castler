@@ -12,7 +12,7 @@ def create_hospital_lender_escrow(hospital, email, payee):
     for lender in lenders:
         escrow = frappe.new_doc("Castler Account")
         escrow.update({
-            "account_name": f"{hospital} - {lender}",
+            "account_name": f"{hospital} {lender}",
             "email": email,
             "start_date": get_datetime(),
             "validity": settings.default_validity or 365,

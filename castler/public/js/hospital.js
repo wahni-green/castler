@@ -17,7 +17,7 @@ frappe.ui.form.on('Hospital', {
                         fieldname: "payee",
                         label: __("Payee"),
                         fieldtype: "Link",
-                        options: "Castler Account",
+                        options: "Castler Payee",
                         reqd: 1
                     },
                 ],
@@ -41,6 +41,7 @@ frappe.ui.form.on('Hospital', {
                     });
                 }
             });
+            dialog.show();
         }, __("Create"));
     }
 });
