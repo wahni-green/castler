@@ -14,6 +14,7 @@
   "from_type",
   "transfer_type",
   "amount",
+  "account_balance",
   "column_break_ecjl",
   "from_account",
   "to_account",
@@ -102,12 +103,18 @@
    "fieldtype": "Select",
    "label": "From Type",
    "options": "Castler Account\nBank Account"
+  },
+  {
+   "fieldname": "account_balance",
+   "fieldtype": "Currency",
+   "label": "Account Balance",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-11-25 08:57:13.890771",
+ "modified": "2025-01-22 11:56:41.345503",
  "modified_by": "Administrator",
  "module": "Castler",
  "name": "Castler Transfer",

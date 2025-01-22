@@ -15,6 +15,7 @@
   "email",
   "bank",
   "purpose",
+  "last_sync_on",
   "section_break_lesl",
   "payees"
  ],
@@ -102,11 +103,16 @@
    "options": "Castler Account Payee",
    "read_only_depends_on": "eval: !doc.__islocal",
    "reqd": 1
+  },
+  {
+   "fieldname": "last_sync_on",
+   "fieldtype": "Datetime",
+   "label": "Last Sync On (Statement)"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-25 08:44:59.085607",
+ "modified": "2025-01-22 11:20:41.665930",
  "modified_by": "Administrator",
  "module": "Castler",
  "name": "Castler Account",

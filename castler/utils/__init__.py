@@ -18,7 +18,8 @@ class CastlerAPI:
                 "X-API-KEY": self.settings.x_api_key,
                 "Content-Type": "application/json",
             },
-            json=body
+            json=body if method=="POST" else None,
+            params=body if method=="GET" else None,
         )
 
         try:
@@ -83,7 +84,16 @@ class CastlerAPI:
         return response["result"]
 
     def fetch_bank_balance(self, account_no):
-        url = f"{self.settings.base_url}/api/v1/bank-account/{account_no}/balance" 
+        url = f"{self.settings.base_url}/api/v1/account/{account_no}/balance" 
+        response = self.make_request(url, {}, "GET")
+        if not response.get("success"):
+            frappe.throw(
+                "<br>".join(response.get("errors", []))
+            )
+        return response["result"]
+
+    def fetch_escrow_balance(self, account_no):
+        url = f"{self.settings.base_url}/api/v1/account/{account_no}/balance" 
         response = self.make_request(url, {}, "GET")
         if not response.get("success"):
             frappe.throw(
@@ -144,3 +154,18 @@ class CastlerAPI:
                 "<br>".join(response.get("errors", []))
             )
         return response["result"]
+
+    def get_statement(self, account_no, start_date, end_date, page):
+        url = f"{self.settings.base_url}/api/v1/statement"
+        body = {
+            "accountId": account_no,
+            "dateFrom": start_date,
+            "dateTo": end_date,
+            "page": page,
+        }
+        response = self.make_request(url, body, "GET")
+        if not response.get("success"):
+            frappe.throw(
+                "<br>".join(response.get("errors", []))
+            )
+        return response

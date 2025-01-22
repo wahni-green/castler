@@ -8,6 +8,9 @@ from castler.utils import CastlerAPI
 
 
 class CastlerTransfer(Document):
+	def validate(self):
+		self.fetch_account_balance()
+
 	def on_submit(self):
 		self.create_transfer()
 
@@ -51,3 +54,16 @@ class CastlerTransfer(Document):
 
 		self.transfer_id = transfer_details["transferId"]
 		frappe.msgprint(str(transfer_details))
+
+	@frappe.whitelist()
+	def fetch_account_balance(self):
+		if self.from_type != "Castler Account":
+			self.account_balance = 0
+			return
+
+		if not self.from_account:
+			self.account_balance = 0
+			return
+
+		castler_api = CastlerAPI()
+		self.account_balance = castler_api.fetch_escrow_balance(self.from_account)

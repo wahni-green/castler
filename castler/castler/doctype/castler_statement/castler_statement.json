@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "autoname": "field:transaction_id",
+ "creation": "2025-01-22 11:33:04.905084",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "account",
+  "transaction_id",
+  "amount",
+  "balance",
+  "column_break_afzk",
+  "status",
+  "transaction_type",
+  "transaction_created_on",
+  "transaction_updated_on",
+  "section_break_plda",
+  "bank_account_no",
+  "bank_account_holder",
+  "column_break_tdfi",
+  "bank_account_ifsc",
+  "bank"
+ ],
+ "fields": [
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Account",
+   "options": "Castler Account",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_afzk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "transaction_created_on",
+   "fieldtype": "Datetime",
+   "label": "Created On",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "transaction_updated_on",
+   "fieldtype": "Datetime",
+   "label": "Updated On",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "transaction_id",
+   "fieldtype": "Data",
+   "label": "Transaction ID",
+   "read_only": 1,
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "non_negative": 1,
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "balance",
+   "fieldtype": "Currency",
+   "label": "Balance",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "transaction_type",
+   "fieldtype": "Select",
+   "label": "Transaction Type",
+   "options": "\nInward\nOutward",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_plda",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "bank_account_no",
+   "fieldtype": "Data",
+   "label": "Bank Account No",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_tdfi",
+   "fieldtype": "Column Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bank_account_ifsc",
+   "fieldtype": "Data",
+   "label": "IFSC Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bank_account_holder",
+   "fieldtype": "Data",
+   "label": "Bank Account Holder",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Data",
+   "label": "Bank",
+   "read_only": 1
+  }
+ ],
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-22 11:55:31.284088",
+ "modified_by": "Administrator",
+ "module": "Castler",
+ "name": "Castler Statement",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

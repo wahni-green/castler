@@ -150,23 +150,14 @@ doctype_js = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"castler.tasks.all"
-# 	],
-# 	"daily": [
-# 		"castler.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"castler.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"castler.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"castler.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"hourly": [
+		"castler.scheduler.statements._fetch_statement"
+	],
+    "daily": [
+        # add to refetch token
+    ]
+}
 
 # Testing
 # -------
