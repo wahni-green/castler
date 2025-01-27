@@ -13,6 +13,7 @@ def create_hospital_lender_escrow(hospital, email, payee):
         escrow = frappe.new_doc("Castler Account")
         lender_name = lender.replace("-", " ")
         hospital_name = hospital.replace("-", " ")
+        
         escrow.update({
             "account_name": f"{hospital_name} {lender_name}",
             "email": email,
