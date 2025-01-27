@@ -9,6 +9,8 @@
   "account_holder",
   "bank",
   "bank_address",
+  "party_type",
+  "party",
   "column_break_bvng",
   "account_number",
   "ifsc",
@@ -75,11 +77,23 @@
    "no_copy": 1,
    "read_only": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "party_type",
+   "fieldtype": "Select",
+   "label": "Party Type",
+   "options": "Lender\nHospital\nEmployee"
+  },
+  {
+   "fieldname": "party",
+   "fieldtype": "Dynamic Link",
+   "label": "Party",
+   "options": "party_type"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-11-15 16:26:21.880658",
+ "modified": "2025-01-27 17:46:36.073563",
  "modified_by": "Administrator",
  "module": "Castler",
  "name": "Castler Payee",

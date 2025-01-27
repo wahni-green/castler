@@ -8,7 +8,7 @@ from frappe.utils import get_datetime
 @frappe.whitelist()
 def create_hospital_lender_escrow(hospital, email, payee):
     settings = frappe.get_cached_doc("Castler Settings")
-    lenders = frappe.db.get_all("Lender", pluck="short_code")
+    lenders = frappe.db.get_all("Lender", {"auto_create_escrow_account": 1}, pluck="short_code")
     for lender in lenders:
         escrow = frappe.new_doc("Castler Account")
         lender_name = lender.replace("-", " ")
